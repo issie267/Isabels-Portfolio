@@ -1,86 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isabel's Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --purple: #4D1979;
+      --white: #ffffff;
+      --light-grey: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-grey);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    .carousel-container {
+      position: relative;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .carousel-tile {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 2rem;
+    }
+
+    .tile-intro {
+      background-color: var(--purple);
+      flex-direction: column;
+    }
+
+    .tile-headshot {
+      background-color: #6a1b9a; /* slightly lighter purple for contrast */
+      flex-direction: column;
+    }
+
+    .tile-details {
+      background-color: #4D1979;
+      flex-direction: column;
+      display: flex;
+      justify-content: flex-start;
+      padding: 2rem;
+    }
+
+    .tile-project {
+      background-color: #5e1980;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.3);
+      border: none;
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .headshot-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--white);
+    }
+
+    .details-sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .details-buttons button {
+      background-color: #fff;
+      color: var(--purple);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .details-content {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .project-img {
+      max-width: 80%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <main class="carousel">
-    <!-- Tile 1: Intro -->
-    <section class="tile intro">
-      <h1>Isabel</h1>
+
+  <button class="arrow arrow-left" onclick="scrollLeft()">&#10094;</button>
+  <button class="arrow arrow-right" onclick="scrollRight()">&#10095;</button>
+
+  <div class="carousel-container" id="carousel">
+
+    <!-- Intro Tile -->
+    <div class="carousel-tile tile-intro">
+      <h1>Hi, I'm [Your Name]</h1>
+      <p>Punchy intro text about experience and skills.</p>
       <p>
-        Independent thinker & designer. Passionate about innovation, creativity, 
-        and impact. 
+        <a href="mailto:your.email@example.com?subject=Contact">Email Me</a> | 
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+        <a href="https://www.lboro.ac.uk/students/profile" target="_blank">Loughborough Profile</a>
       </p>
-      <div class="links">
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.lboro.ac.uk" target="_blank" rel="noopener noreferrer">Loughborough Profile</a>
-      </div>
-    </section>
+    </div>
 
-    <!-- Tile 2: Headshot -->
-    <section class="tile headshot">
-      <img src="your-headshot.jpg" alt="Headshot of Isabel" />
-    </section>
+    <!-- Headshot Tile -->
+    <div class="carousel-tile tile-headshot">
+      <img src="headshot.jpg" alt="Your Headshot" class="headshot-img">
+    </div>
 
-    <!-- Tile 3: Details -->
-    <section class="tile details">
-      <div class="details-inner">
-        <h2>My Journey</h2>
-        <div class="sidebar">
-          <button data-section="education">Education</button>
-          <button data-section="experience">Experience</button>
-          <button data-section="volunteering">Volunteering</button>
-          <button data-section="interests">Interests</button>
+    <!-- Details Tile -->
+    <div class="carousel-tile tile-details">
+      <h2>Details</h2>
+      <div class="details-sidebar">
+        <div class="details-buttons">
+          <button onclick="showDetail('education')">Education</button>
+          <button onclick="showDetail('experience')">Experience</button>
+          <button onclick="showDetail('volunteering')">Volunteering</button>
+          <button onclick="showDetail('interests')">Interests</button>
         </div>
-        <div class="content">
-          <div id="education" class="content-section active">
-            <h3>Education</h3>
-            <p>BSc in ... (example). Achieved First Class Honours at Loughborough University.</p>
-          </div>
-          <div id="experience" class="content-section">
-            <h3>Experience</h3>
-            <p>Worked on projects in ... demonstrating creativity, resilience, and collaboration.</p>
-          </div>
-          <div id="volunteering" class="content-section">
-            <h3>Volunteering</h3>
-            <p>Supported community initiatives, mentoring, and team-led projects.</p>
-          </div>
-          <div id="interests" class="content-section">
-            <h3>Interests</h3>
-            <p>Passionate about design, sports, and sustainability.</p>
-          </div>
+        <div class="details-content" id="details-content">
+          Select a section to see details.
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Tile 4: Project -->
-    <section class="tile project">
-      <img src="your-project-image.jpg" alt="Screenshot of project work" />
-      <div>
-        <h2>Featured Project</h2>
-        <p>
-          Designed and delivered a project that involved ... (brief description). 
-          Resulted in measurable impact and strong feedback.
-        </p>
-      </div>
-    </section>
-  </main>
+    <!-- Project Tile -->
+    <div class="carousel-tile tile-project">
+      <h2>My Projects</h2>
+      <img src="project1.jpg" alt="Project 1" class="project-img">
+      <p>Brief description of your project highlighting achievements and skills.</p>
+    </div>
+
+  </div>
 
   <script>
-    // Sidebar switcher
-    const buttons = document.querySelectorAll('.sidebar button');
-    const sections = document.querySelectorAll('.content-section');
+    const carousel = document.getElementById('carousel');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        sections.forEach(sec => sec.classList.remove('active'));
-        document.getElementById(btn.dataset.section).classList.add('active');
-      });
-    });
+    function scrollLeft() {
+      carousel.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+      carousel.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    }
+
+    function showDetail(section) {
+      const content = document.getElementById('details-content');
+      switch(section) {
+        case 'education':
+          content.innerHTML = '<strong>Education:</strong> BSc in [Your Degree], Loughborough University, 202X';
+          break;
+        case 'experience':
+          content.innerHTML = '<strong>Experience:</strong> Internship at [Company], Role: [Your Role]';
+          break;
+        case 'volunteering':
+          content.innerHTML = '<strong>Volunteering:</strong> [Organization], [Role]';
+          break;
+        case 'interests':
+          content.innerHTML = '<strong>Interests:</strong> AI, Web Development, Open Source';
+          break;
+        default:
+          content.innerHTML = 'Select a section to see details.';
+      }
+    }
   </script>
+
 </body>
 </html>
