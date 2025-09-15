@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Isabel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="carousel">
+    <!-- Tile 1: Intro -->
+    <section class="tile intro">
+      <h1>Isabel</h1>
+      <p>
+        Independent thinker & designer. Passionate about innovation, creativity, 
+        and impact. 
+      </p>
+      <div class="links">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.lboro.ac.uk" target="_blank" rel="noopener noreferrer">Loughborough Profile</a>
+      </div>
+    </section>
+
+    <!-- Tile 2: Headshot -->
+    <section class="tile headshot">
+      <img src="your-headshot.jpg" alt="Headshot of Isabel" />
+    </section>
+
+    <!-- Tile 3: Details -->
+    <section class="tile details">
+      <h2>My Journey</h2>
+      <div class="sidebar">
+        <button data-section="education">Education</button>
+        <button data-section="experience">Experience</button>
+        <button data-section="volunteering">Volunteering</button>
+        <button data-section="interests">Interests</button>
+      </div>
+      <div class="content">
+        <div id="education" class="content-section active">
+          <h3>Education</h3>
+          <p>BSc in ... (example). Achieved First Class Honours at Loughborough University.</p>
+        </div>
+        <div id="experience" class="content-section">
+          <h3>Experience</h3>
+          <p>Worked on projects in ... demonstrating creativity, resilience, and collaboration.</p>
+        </div>
+        <div id="volunteering" class="content-section">
+          <h3>Volunteering</h3>
+          <p>Supported community initiatives, mentoring, and team-led projects.</p>
+        </div>
+        <div id="interests" class="content-section">
+          <h3>Interests</h3>
+          <p>Passionate about design, sports, and sustainability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tile 4: Project -->
+    <section class="tile project">
+      <img src="your-project-image.jpg" alt="Screenshot of project work" />
+      <div>
+        <h2>Featured Project</h2>
+        <p>
+          Designed and delivered a project that involved ... (brief description). 
+          Resulted in measurable impact and strong feedback.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Sidebar switcher
+    const buttons = document.querySelectorAll('.sidebar button');
+    const sections = document.querySelectorAll('.content-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(btn.dataset.section).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
