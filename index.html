@@ -109,7 +109,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
-
+/*
     .project {
       background: #ffffff;
       border-radius: 10px;
@@ -125,7 +125,7 @@
       background: rgba(200,162,200,0.03); /* subtle lilac wash */
       border-color: rgba(200,162,200,0.14);
     }
-
+/*
     .project img {
       width: 100%;
       height: 180px;
@@ -133,19 +133,44 @@
       display: block;
       background: #eee;
     }
+    */
+    .project img {
+  width: 100%;
+  height: 220px;     /* consistent image block height */
+  object-fit: contain; /* show entire image without cropping */
+  background: #f9f9f9; /* optional: add a neutral background behind transparent/letterboxed images */
+  padding: 6px;        /* optional: adds breathing room around the image */
+}
+/*
 
     .project-content {
       padding: 1rem;
-    }
+    } 
     .project-content h3 {
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
       color: #361163; /* dark purple project title */
     }
-    .project-content p {
+/*    .project-content p {
       font-size: 0.90rem;
       color: #444;
-    }
+    } */
+
+    
+    .project {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 380px;  /* ensures consistency across tiles */
+}
+.project-content {
+  padding: 1rem;
+  flex: 1;        /* text fills remaining space below image */
+}
+
 
     footer {
       text-align: center;
