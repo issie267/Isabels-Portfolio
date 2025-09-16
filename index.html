@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Isabel Scobbie - Portfolio & CV</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isabel Scobbie - Portfolio & CV</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Colours updated to requested palette:
+       primary dark purple: #361163
+       deep purple:         #2D0E52
+       light pink:          #ffb6c1
+       lilac:               #c8a2c8
+       white:               #ffffff
+    */
     body {
       font-family: 'Inter', sans-serif;
-      background: #fdfdfd;
-      color: #222;
+      background: #ffffff;            /* white background */
+      color: #2D0E52;                /* deep purple text */
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
+
     header {
       text-align: center;
       padding: 3rem 1rem;
-      background: #d14424;
-      color: white;
+      background: #361163;           /* dark purple header */
+      color: #ffffff;
     }
     header h1 {
       font-size: 2.8rem;
@@ -28,105 +36,140 @@
     header p {
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      color: #ffb6c1;                /* soft pink subtitle */
     }
     header .socials a {
       margin: 0 0.5rem;
       font-size: 1.3rem;
-      color: white;
-      transition: 0.3s;
+      color: #ffffff;
+      transition: 0.25s;
     }
     header .socials a:hover {
-      color: #ffe9e4;
+      color: #c8a2c8;                /* lilac hover on icons */
     }
+
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem;
     }
+
     section {
       margin-bottom: 3rem;
     }
+
     section h2 {
       font-size: 1.8rem;
-      border-bottom: 2px solid #d14424;
+      border-bottom: 2px solid #ffb6c1; /* pink underline for headings */
       display: inline-block;
       margin-bottom: 1rem;
       padding-bottom: 0.2rem;
+      color: #361163;                   /* dark purple heading text */
     }
+
     .entry {
       margin-bottom: 1.5rem;
     }
     .entry h3 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
+      color: #2D0E52;
     }
     .entry .meta {
       font-style: italic;
       font-size: 0.9rem;
-      color: #555;
+      color: #666;
       margin-bottom: 0.5rem;
     }
     .entry ul {
       margin-left: 1.2rem;
       list-style-type: disc;
     }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.7rem;
     }
     .skill {
-      background: #d14424;
-      color: white;
+      background: #2D0E52;            /* deep purple pills */
+      color: #ffffff;
       padding: 0.4rem 0.8rem;
       border-radius: 6px;
       font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
     }
+    .skill:hover {
+      background: #361163;            /* slightly darker on hover */
+      transform: translateY(-2px);
+    }
+
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
+
     .project {
-      background: #fff;
+      background: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 8px rgba(45,14,82,0.06);
       overflow: hidden;
-      transition: 0.3s;
+      transition: transform 0.28s, box-shadow 0.28s, background 0.28s;
+      border: 1px solid rgba(45,14,82,0.04);
     }
+    /* lilac hover effect requested */
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(200,162,200,0.14);
+      background: rgba(200,162,200,0.03); /* subtle lilac wash */
+      border-color: rgba(200,162,200,0.14);
+    }
+
     .project img {
       width: 100%;
       height: 180px;
       object-fit: cover;
+      display: block;
+      background: #eee;
     }
+
     .project-content {
       padding: 1rem;
     }
     .project-content h3 {
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
+      color: #361163; /* dark purple project title */
     }
     .project-content p {
-      font-size: 0.9rem;
+      font-size: 0.90rem;
       color: #444;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       color: #555;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid rgba(45,14,82,0.06);
+      background: transparent;
+    }
+
+    /* small responsive tweak */
+    @media (max-width: 520px) {
+      header h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Isabel Scobbie</h1>
-    <p>Aeronautical Engineering Student | Portfolio & CV</p>
+    <p>Aeronautical Engineering MEng | Portfolio & CV</p>
     <div class="socials">
-      <a href="mailto:iscobbie52@outlook.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/issie267" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://linkedin.com/in/isabel-scobbie" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:iscobbie52@outlook.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/issie267" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/isabel-scobbie" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     </div>
   </header>
 
@@ -134,19 +177,45 @@
     <!-- Experience -->
     <section id="experience">
       <h2>Experience</h2>
+
       <div class="entry">
-        <h3>Sustainability and Community Lead</h3>
-        <div class="meta">Caterpillar Young Professionals, County Durham, UK | Aug 2023 – Sept 2024</div>
+        <h3>Research Intern</h3>
+        <div class="meta">Loughborough University — Loughborough, England | June 2025 – Sept 2025</div>
         <ul>
-          <li>Hosted sustainability events and created partnerships with local charities.</li>
-          <li>Organised outreach to encourage young people into engineering disciplines.</li>
+          <li>Conducted calibration and verification of sensing nodes for aircraft structural health monitoring (key in non-destructive testing (NDT) applications).</li>
+          <li>Collaborated with academic staff to test and evaluate performance metrics of prototype systems.</li>
+          <li>Developed practical skills in data analysis, experimental testing and technical reporting; produced prototypes for international research teams.</li>
+          <li>Contributing to a research paper on self-powered sensors using energy harvesters.</li>
         </ul>
       </div>
+
       <div class="entry">
-        <h3>Leadership & Volunteering</h3>
-        <div class="meta">Cranbrook School Engineering Society & Hospice in the Weald</div>
+        <h3>EHS Placement</h3>
+        <div class="meta">Caterpillar — County Durham, England | June 2023 – Sept 2024</div>
         <ul>
-          <li>Chair of Engineering Society and Senior Section Guide; mentoring and teamwork.</li>
+          <li>Introduced Power BI and Power Apps into the Environmental Health & Safety department to inform workers of incidents on site; interviewed Manufacturing Engineering, Supply Chain and Facilities teams to capture requirements.</li>
+          <li>Built dashboards that were used in multiple management meetings; colleagues requested follow-up Power BI training.</li>
+          <li>Presented projects to the MD and Senior Management Team, including a security-status project later replicated by CAT America.</li>
+          <li>Placement extended to ensure ongoing maintenance of solutions; received employee recognition. Working towards NEBOSH General Certificate while completing placement duties.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>IT Consultant (Intern)</h3>
+        <div class="meta">I-Access Solutions — Singapore | Nov 2019 – Feb 2020</div>
+        <ul>
+          <li>Updated training manuals and produced staff training materials; provided office administration support.</li>
+          <li>Gained additional computer and coding skills and strengthened communication while working in a multicultural environment.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Sustainability & Community Lead</h3>
+        <div class="meta">Caterpillar Young Professionals — County Durham, England | Aug 2023 – Sept 2024</div>
+        <ul>
+          <li>Attended monthly meetings to support Young Professionals and hosted two sustainability events.</li>
+          <li>Created a partnership with a garden charity to encourage colleague volunteering; plans are in place to continue this event beyond the placement.</li>
+          <li>Organised and attended outreach events to encourage young people into engineering disciplines.</li>
         </ul>
       </div>
     </section>
@@ -154,20 +223,25 @@
     <!-- Education -->
     <section id="education">
       <h2>Education</h2>
+
       <div class="entry">
-        <h3>Loughborough University</h3>
-        <div class="meta">BEng Chemical Engineering | 2020 – 2024</div>
+        <h3>Loughborough University, Loughborough</h3>
+        <div class="meta">Masters of Engineering in Aeronautical Engineering — Sept 2020 – Present</div>
         <ul>
-          <li>Modules: Process Design, Reaction Engineering, Sustainability.</li>
-          <li>1st prize at UCL for project delivery & presentation.</li>
+          <li>Awarded ISTAT Scholarship for academic excellence.</li>
         </ul>
       </div>
+
       <div class="entry">
-        <h3>Cranbrook School</h3>
-        <div class="meta">A Levels | 2018 – 2020</div>
-        <ul>
-          <li>Maths (A*), Chemistry (A), Physics (A).</li>
-        </ul>
+        <h3>Cranbrook School, Kent</h3>
+        <div class="meta">A Levels — Sept 2017 – July 2019</div>
+        <p>A Levels: Mathematics, Physics, Further Mathematics</p>
+      </div>
+
+      <div class="entry">
+        <h3>Highworth Grammar School, Kent</h3>
+        <div class="meta">GCSEs — Sept 2012 – July 2017</div>
+        <p>13 GCSEs</p>
       </div>
     </section>
 
@@ -176,24 +250,26 @@
       <h2>Projects</h2>
       <div class="projects">
         <div class="project">
-          <img src="images/project1.jpg" alt="Project 1 Screenshot">
+          <img src="images/project1.jpg" alt="Hydrogen-powered aircraft design (placeholder)">
           <div class="project-content">
-            <h3>Multi-User Drawing Tool</h3>
-            <p>Built a collaborative electronic classroom where multiple users can edit and draw simultaneously. Tools: C++, MFC.</p>
+            <h3>Hydrogen-Powered Aircraft Design</h3>
+            <p>Led the propulsion stream on a group project designing a regional hydrogen aircraft: fuel system considerations, performance trade-offs and integration studies.</p>
           </div>
         </div>
+
         <div class="project">
-          <img src="images/project2.jpg" alt="Project 2 Screenshot">
+          <img src="images/project2.jpg" alt="CFD analysis placeholder">
           <div class="project-content">
-            <h3>Autonomous Drone Path Planning</h3>
-            <p>Developed Python-based path planning algorithms for drones, simulated with ROS and Gazebo.</p>
+            <h3>CFD Analysis of Compressor Blades</h3>
+            <p>Developed CFD simulations (ANSYS Fluent, MATLAB) to optimise blade geometries for efficiency and stability; post-processed results and summarised recommendations.</p>
           </div>
         </div>
+
         <div class="project">
-          <img src="images/project3.jpg" alt="Project 3 Screenshot">
+          <img src="images/project3.jpg" alt="Power BI dashboard placeholder">
           <div class="project-content">
             <h3>Data Dashboard with Power BI</h3>
-            <p>Created sustainability dashboards for Caterpillar using Power BI and Python data pipelines.</p>
+            <p>Designed sustainability dashboards at Caterpillar using Power BI and Python ETL pipelines to visualise incidents and site metrics for management decision-making.</p>
           </div>
         </div>
       </div>
@@ -207,12 +283,15 @@
         <span class="skill">Python</span>
         <span class="skill">Power BI</span>
         <span class="skill">Data Analysis</span>
+        <span class="skill">Experimental Testing</span>
+        <span class="skill">Sensor Calibration</span>
+        <span class="skill">Technical Reporting</span>
         <span class="skill">CAD</span>
         <span class="skill">CFD</span>
         <span class="skill">FEA</span>
-        <span class="skill">Leadership</span>
-        <span class="skill">Mentoring</span>
-        <span class="skill">Spanish (B1)</span>
+        <span class="skill">Microsoft Office</span>
+        <span class="skill">Fault Analysis</span>
+        <span class="skill">Prototyping</span>
       </div>
     </section>
 
@@ -220,16 +299,16 @@
     <section id="achievements">
       <h2>Achievements & Interests</h2>
       <ul>
-        <li>1st prize at UCL Chemical Engineering Course for project delivery & presentation.</li>
-        <li>Member of Women’s Initiative Network at Loughborough University & Caterpillar.</li>
-        <li>Cycling, running, yoga; multiple charity events.</li>
-        <li>Mental Health First Aid UK Certified; advocate for wellbeing.</li>
+        <li>Selected for a Chemical Engineering course at University College London — team won 1st prize for project delivery and presentation.</li>
+        <li>Member of the Women’s Initiative Network (WIN) at Loughborough University and Caterpillar.</li>
+        <li>Enjoy cycling, running and yoga; participated in several charity events.</li>
+        <li>Mental Health First Aid UK certified; active advocate for mental health.</li>
       </ul>
     </section>
   </div>
 
   <footer>
-    © 2025 Your Name | <a href="mailto:youremail@example.com">Contact Me</a>
+    © 2025 Isabel Scobbie | <a href="mailto:iscobbie52@outlook.com">iscobbie52@outlook.com</a>
   </footer>
 </body>
 </html>
