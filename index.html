@@ -3,231 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Your Name - Portfolio & CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --purple: #4D1979;
-      --white: #ffffff;
-      --light-grey: #f0f0f0;
-    }
-
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fdfdfd;
+      color: #222;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--light-grey);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
-    .carousel-container {
-      position: relative;
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      width: 100%;
-      height: 100vh;
-    }
-
-    .carousel-tile {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    header {
       text-align: center;
-      font-size: 1.5rem;
-      padding: 2rem;
+      padding: 3rem 1rem;
+      background: #d14424;
+      color: white;
     }
-
-    .tile-intro {
-      background-color: var(--purple);
-      flex-direction: column;
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
-
-    .tile-headshot {
-      background-color: #6a1b9a; /* slightly lighter purple for contrast */
-      flex-direction: column;
-    }
-
-    .tile-details {
-      background-color: #4D1979;
-      flex-direction: column;
-      display: flex;
-      justify-content: flex-start;
-      padding: 2rem;
-    }
-
-    .tile-project {
-      background-color: #5e1980;
-      flex-direction: column;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
+    header p {
       font-size: 1.2rem;
       margin-bottom: 1rem;
     }
-
-    a {
-      color: var(--white);
-      text-decoration: underline;
+    header .socials a {
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      color: white;
+      transition: 0.3s;
     }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 3rem;
-      background-color: rgba(0,0,0,0.3);
-      border: none;
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 10;
+    header .socials a:hover {
+      color: #ffe9e4;
     }
-
-    .arrow-left {
-      left: 10px;
-    }
-
-    .arrow-right {
-      right: 10px;
-    }
-
-    .headshot-img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--white);
-    }
-
-    .details-sidebar {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      max-width: 600px;
+    .container {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 2rem;
     }
-
-    .details-buttons button {
-      background-color: #fff;
-      color: var(--purple);
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
+    section {
+      margin-bottom: 3rem;
     }
-
-    .details-content {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #fff;
-    }
-
-    .project-img {
-      max-width: 80%;
-      border-radius: 10px;
+    section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #d14424;
+      display: inline-block;
       margin-bottom: 1rem;
+      padding-bottom: 0.2rem;
+    }
+    .entry {
+      margin-bottom: 1.5rem;
+    }
+    .entry h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+    .entry .meta {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .entry ul {
+      margin-left: 1.2rem;
+      list-style-type: disc;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .skill {
+      background: #d14424;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 1rem;
+    }
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .project-content p {
+      font-size: 0.9rem;
+      color: #444;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
-
-  <button class="arrow arrow-left" onclick="scrollLeft()">&#10094;</button>
-  <button class="arrow arrow-right" onclick="scrollRight()">&#10095;</button>
-
-  <div class="carousel-container" id="carousel">
-
-    <!-- Intro Tile -->
-    <div class="carousel-tile tile-intro">
-      <h1>Hi, I'm [Your Name]</h1>
-      <p>Punchy intro text about experience and skills.</p>
-      <p>
-        <a href="mailto:your.email@example.com?subject=Contact">Email Me</a> | 
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
-        <a href="https://www.lboro.ac.uk/students/profile" target="_blank">Loughborough Profile</a>
-      </p>
+  <header>
+    <h1>Your Name</h1>
+    <p>Engineer | Sustainability & Community Lead | Portfolio & CV</p>
+    <div class="socials">
+      <a href="mailto:youremail@example.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/yourgithub" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     </div>
+  </header>
 
-    <!-- Headshot Tile -->
-    <div class="carousel-tile tile-headshot">
-      <img src="headshot.jpg" alt="Your Headshot" class="headshot-img">
-    </div>
+  <div class="container">
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="entry">
+        <h3>Sustainability and Community Lead</h3>
+        <div class="meta">Caterpillar Young Professionals, County Durham, UK | Aug 2023 – Sept 2024</div>
+        <ul>
+          <li>Hosted sustainability events and created partnerships with local charities.</li>
+          <li>Organised outreach to encourage young people into engineering disciplines.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Leadership & Volunteering</h3>
+        <div class="meta">Cranbrook School Engineering Society & Hospice in the Weald</div>
+        <ul>
+          <li>Chair of Engineering Society and Senior Section Guide; mentoring and teamwork.</li>
+        </ul>
+      </div>
+    </section>
 
-    <!-- Details Tile -->
-    <div class="carousel-tile tile-details">
-      <h2>Details</h2>
-      <div class="details-sidebar">
-        <div class="details-buttons">
-          <button onclick="showDetail('education')">Education</button>
-          <button onclick="showDetail('experience')">Experience</button>
-          <button onclick="showDetail('volunteering')">Volunteering</button>
-          <button onclick="showDetail('interests')">Interests</button>
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <h3>Loughborough University</h3>
+        <div class="meta">BEng Chemical Engineering | 2020 – 2024</div>
+        <ul>
+          <li>Modules: Process Design, Reaction Engineering, Sustainability.</li>
+          <li>1st prize at UCL for project delivery & presentation.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Cranbrook School</h3>
+        <div class="meta">A Levels | 2018 – 2020</div>
+        <ul>
+          <li>Maths (A*), Chemistry (A), Physics (A).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="images/project1.jpg" alt="Project 1 Screenshot">
+          <div class="project-content">
+            <h3>Multi-User Drawing Tool</h3>
+            <p>Built a collaborative electronic classroom where multiple users can edit and draw simultaneously. Tools: C++, MFC.</p>
+          </div>
         </div>
-        <div class="details-content" id="details-content">
-          Select a section to see details.
+        <div class="project">
+          <img src="images/project2.jpg" alt="Project 2 Screenshot">
+          <div class="project-content">
+            <h3>Autonomous Drone Path Planning</h3>
+            <p>Developed Python-based path planning algorithms for drones, simulated with ROS and Gazebo.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="images/project3.jpg" alt="Project 3 Screenshot">
+          <div class="project-content">
+            <h3>Data Dashboard with Power BI</h3>
+            <p>Created sustainability dashboards for Caterpillar using Power BI and Python data pipelines.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Project Tile -->
-    <div class="carousel-tile tile-project">
-      <h2>My Projects</h2>
-      <img src="project1.jpg" alt="Project 1" class="project-img">
-      <p>Brief description of your project highlighting achievements and skills.</p>
-    </div>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">MATLAB</span>
+        <span class="skill">Python</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Data Analysis</span>
+        <span class="skill">CAD</span>
+        <span class="skill">CFD</span>
+        <span class="skill">FEA</span>
+        <span class="skill">Leadership</span>
+        <span class="skill">Mentoring</span>
+        <span class="skill">Spanish (B1)</span>
+      </div>
+    </section>
 
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>Achievements & Interests</h2>
+      <ul>
+        <li>1st prize at UCL Chemical Engineering Course for project delivery & presentation.</li>
+        <li>Member of Women’s Initiative Network at Loughborough University & Caterpillar.</li>
+        <li>Cycling, running, yoga; multiple charity events.</li>
+        <li>Mental Health First Aid UK Certified; advocate for wellbeing.</li>
+      </ul>
+    </section>
   </div>
 
-  <script>
-    const carousel = document.getElementById('carousel');
-
-    function scrollLeft() {
-      carousel.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
-    }
-
-    function scrollRight() {
-      carousel.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
-    }
-
-    function showDetail(section) {
-      const content = document.getElementById('details-content');
-      switch(section) {
-        case 'education':
-          content.innerHTML = '<strong>Education:</strong> BSc in [Your Degree], Loughborough University, 202X';
-          break;
-        case 'experience':
-          content.innerHTML = '<strong>Experience:</strong> Internship at [Company], Role: [Your Role]';
-          break;
-        case 'volunteering':
-          content.innerHTML = '<strong>Volunteering:</strong> [Organization], [Role]';
-          break;
-        case 'interests':
-          content.innerHTML = '<strong>Interests:</strong> AI, Web Development, Open Source';
-          break;
-        default:
-          content.innerHTML = 'Select a section to see details.';
-      }
-    }
-  </script>
-
+  <footer>
+    © 2025 Your Name | <a href="mailto:youremail@example.com">Contact Me</a>
+  </footer>
 </body>
 </html>
