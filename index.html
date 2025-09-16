@@ -134,14 +134,22 @@
       background: #eee;
     }
     */
+.project img {
+  width: 100%;       /* fill card width */
+  height: auto;      /* keep natural aspect ratio */
+  object-fit: contain; /* ensure no cropping */
+  display: block;     /* remove bottom inline gap */
+}
+
+    /*
     .project img {
   width: 100%;
   height: 220px;     /* consistent image block height */
-  object-fit: contain; /* show entire image without cropping */
-  background: #f9f9f9; /* optional: add a neutral background behind transparent/letterboxed images */
-  padding: 6px;        /* optional: adds breathing room around the image */
+/*  object-fit: contain; /* show entire image without cropping */
+ /* background: #f9f9f9; /* optional: add a neutral background behind transparent/letterboxed images */
+/*  padding: 6px;        /* optional: adds breathing room around the image */
 }
-/*
+
 
     .project-content {
       padding: 1rem;
