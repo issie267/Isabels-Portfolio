@@ -163,7 +163,7 @@
     header {
   text-align: left; /* align text left now */
   padding: 3rem 1rem;
-  background: #d14424;
+  background: #7b2cbf;
   color: white;
 }
 
@@ -194,6 +194,25 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+    @media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .headshot {
+    margin-bottom: 1rem;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .header-text p {
+    font-size: 1rem;
+  }
+}
+
   </style>
 </head>
 <body>
