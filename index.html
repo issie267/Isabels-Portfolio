@@ -160,18 +160,58 @@
     @media (max-width: 520px) {
       header h1 { font-size: 1.9rem; }
     }
+    header {
+  text-align: left; /* align text left now */
+  padding: 3rem 1rem;
+  background: #d14424;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem; /* space between photo and text */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.headshot {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  flex-shrink: 0; /* prevents shrinking on smaller screens */
+}
+
+.header-text h1 {
+  font-size: 2.8rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Isabel Scobbie</h1>
-    <p>Aeronautical Engineering MEng | Portfolio & CV</p>
-    <div class="socials">
-      <a href="mailto:iscobbie52@outlook.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/issie267" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://linkedin.com/in/isabel-scobbie" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<header>
+  <div class="header-content">
+    <img src="images/headshot.jpg" alt="Isabel Scobbie" class="headshot">
+    <div class="header-text">
+      <h1>Isabel Scobbie</h1>
+      <p>Aeronautical Engineering Student | Portfolio & CV</p>
+      <div class="socials">
+        <a href="mailto:iscobbie52@outlook.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/issie267" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/isabel-scobbie" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <div class="container">
     <!-- Experience -->
